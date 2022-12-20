@@ -1,7 +1,8 @@
 
 tableData = [['apples', 'oranges', 'cherries', 'banana'],
              ['Alice', 'Bob', 'Carol', 'David'],
-             ['dogs', 'cats', 'moose', 'goose']]
+             ['dogs', 'cats', 'moose', 'goose'],
+             ['apples', 'oranges', 'cherries', 'banana', 'moose', 'goose']]
 
 
 def maxLenght(listData):

@@ -100,11 +100,13 @@ import pprint
 
 # Nested Dictionaries and Lists
 
-allGuests = {'Alice': {'apples': 5, 'pretzels': 12},
-             'Bob': {'ham sandwiches': 3, 'apples': 2},
-             'Carol': {'cups': 3, 'apple pies': 1},
-             'Bob': {'ham sandwiches': 3, 'apples': 2},
-             'Carol': {'cups': 3, 'apple pies': 1}}
+allGuests = {
+    "Alice": {"apples": 5, "pretzels": 12},
+    "Bob": {"ham sandwiches": 3, "apples": 2},
+    "Carol": {"cups": 3, "apple pies": 1},
+    "Bob": {"ham sandwiches": 3, "apples": 2},
+    "Carol": {"cups": 3, "apple pies": 1},
+}
 
 
 def totalBrought(guests, item):
@@ -114,6 +116,7 @@ def totalBrought(guests, item):
         numBrought += v.get(item, 0)
 
     return numBrought
+
 
 # totalBrought(allGuests, 'apples')
 
@@ -128,6 +131,6 @@ for v in allGuests.values():
 
 # printing theme out
 
-print('Number of things being brought:')
+print("Number of things being brought:")
 for gift in allItemsBrought:
-    print(' - ', gift, ' ' + str(totalBrought(allGuests, gift)))
+    print(" - ", gift, " " + str(totalBrought(allGuests, gift)))
