@@ -38,7 +38,7 @@ capitals = {'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix',
 
 # Create a folder to store the files in
 folder = Path(Path.cwd() / './35QquizesFolder')
-# Path.mkdir(folder) # Only the first time you execute the programe
+Path.mkdir(folder)  # Only the first time you execute the programe
 print(folder)
 
 for quizNum in range(35):
@@ -51,11 +51,13 @@ for quizNum in range(35):
     quizFile.write((' ' * 20) + f'State capitales Quiz (From {quizNum+1})')
     quizFile.write('\n\n')
 
+    answerFile.write('\n\n\n' +
+                     (' ' * 20) + f'State capitales Quiz Answers (From {quizNum+1})\n\n\n')
     # Shuffle the order of the states.
     states = list(capitals.keys())
     random.shuffle(states)
 
-    # TODO: Loop through all 50 states, making a question for each.
+    #  Loop through all 50 states, making a question for each.
     for questionNum in range(50):
         correctAnswer = capitals[states[questionNum]]
         wrongAnswers = list(capitals.values())
@@ -72,6 +74,20 @@ for quizNum in range(35):
         # shuffle the aswers option
         random.shuffle(answersOption)
 
-        # TODO: Write the question and answer options to the quiz file.
+        # Write the question and answer options to the quiz file.
+        quizFile.write(
+            f'# {questionNum + 1}: What is the capital of {states[questionNum]}? \n')
 
-        # TODO: Write the answer key to a file.
+        ABCD = 'ABCD'
+        for i in range(4):
+            quizFile.write(f'\t{ABCD[i]} {answersOption[i]}.? \n')
+
+        quizFile.write('\n')
+
+        # Write the answer key to a file.
+        answerFile.write(
+            f'Question {questionNum} => capital of {states[questionNum]} is {ABCD[answersOption.index(correctAnswer)]} {correctAnswer}')
+        answerFile.write('\n\n')
+
+    quizFile.close()
+    answerFile.close()
