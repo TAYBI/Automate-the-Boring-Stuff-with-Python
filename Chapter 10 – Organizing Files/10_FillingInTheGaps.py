@@ -38,3 +38,19 @@ if not os.path.isdir(folder):
 #     if i not in listOfrandomGaps:
 #         file = open(folder / f'spam{(i+1):03d}.txt', 'w')
 # file.close()
+
+prefix = 'spam'
+list_ = []
+listINt = []
+
+for folders, subfoldes, files in os.walk(folder):
+    for filename in files:
+        if filename.startswith(prefix):
+            base_name, extension = os.path.splitext(filename)
+            valueOfOrders = int(base_name.replace(prefix, ''))
+            listINt.append(valueOfOrders)
+            # print(int(base_name.replace(prefix, '')))
+            list_.append(filename)
+
+print(len(listINt), listINt)
+print(list_)
