@@ -1,16 +1,3 @@
-#
-# finds all files with a given prefix
-#             such as spam001.txt, spam002.txt, and so on, in a single folder and
-# locates any gaps in the numbering
-#             (such as if there is a spam001.txt and spam003.txt but no spam002.txt).
-# rename all the later files to close this gap.
-#
-#
-# added challenge,
-# > write another program that can:
-# >    insert gaps into numbered files so that a new file can be added
-
-
 from pathlib import Path
 import shutil
 import os
@@ -42,15 +29,26 @@ if not os.path.isdir(folder):
 prefix = 'spam'
 list_ = []
 listINt = []
+# extention = ''
 
 for folders, subfoldes, files in os.walk(folder):
     for filename in files:
         if filename.startswith(prefix):
             base_name, extension = os.path.splitext(filename)
+
             valueOfOrders = int(base_name.replace(prefix, ''))
             listINt.append(valueOfOrders)
             # print(int(base_name.replace(prefix, '')))
             list_.append(filename)
+
+# founding the gaps
+for i in range(len(listINt) - 2):
+    if listINt[i] + 1 != listINt[i+1]:
+        # rename all the later files to close this gap.
+        oldName = f'{prefix}{listINt[i+1]:03d}{extension}'
+        newName = f'{prefix}{(listINt[i+1] - 1):03d}{extension}'
+        print(oldName, '>', newName)
+        shutil.move(folder / f'{oldName}', folder / f'{newName}')
 
 print(len(listINt), listINt)
 print(list_)
