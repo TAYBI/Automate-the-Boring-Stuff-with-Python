@@ -1,6 +1,7 @@
 import random
 
 guess = ''
+toss = ''
 
 while guess not in ('heads', 'tails'):
     print('Guess the coin toss ! Enter heads or tails: ')
@@ -10,7 +11,13 @@ while guess not in ('heads', 'tails'):
 # 1 for heads
 # 0 for tails
 
-toss = random.randint(0, 1)
+rndm = random.randint(0, 1)
+
+if rndm == 1:
+    toss = 'heads'
+else:
+    toss = 'tails'
+
 if toss == guess:
     print('You got it ! congrats')
 else:
@@ -20,3 +27,4 @@ else:
         print('You got it ! congrats')
     else:
         print('Nope. You are really bad at this game.')
+        print('The cion was :', toss)
