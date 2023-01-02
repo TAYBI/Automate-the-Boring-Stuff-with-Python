@@ -13,4 +13,8 @@ else:
     # You should copy this before you ruhn  the program
     adress = pyperclip.paste()
 
+<<<<<<< HEAD
 webbrowser.open('https://www.google.com/maps/place/' + adress)
+=======
+webbrowser.open(f'https://www.google.com/maps/place/{adress}')
+>>>>>>> 015ea71ff6ba1e3aabb22d90115bc21f0a0e0107
