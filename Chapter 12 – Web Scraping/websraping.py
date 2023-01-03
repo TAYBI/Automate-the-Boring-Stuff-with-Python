@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # << << << < HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f481e49e59f9006e8c9b67fa303c757ca7dc1152
 # import webbrowser
 # import requests
 # import bs4
@@ -58,8 +62,16 @@
 # pElements = exampleSoup.select('p')
 # print(pElements[0].getText())
 # # print(pElements)
+<<<<<<< HEAD
 # =======
 # import webbrowser
 
 # webbrowser.open('https://inventwithpython.com')
 # >>>>>>> 015ea71ff6ba1e3aabb22d90115bc21f0a0e0107
+=======
+=======
+import webbrowser
+
+webbrowser.open('https://inventwithpython.com')
+>>>>>>> 015ea71ff6ba1e3aabb22d90115bc21f0a0e0107
+>>>>>>> f481e49e59f9006e8c9b67fa303c757ca7dc1152
