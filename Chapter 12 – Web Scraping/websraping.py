@@ -57,3 +57,6 @@
 # pElements = exampleSoup.select('p')
 # print(pElements[0].getText())
 # # print(pElements)
+
+
+# Controlling the Browser with the selenium Module
