@@ -22,7 +22,7 @@ while not url.endswith('#'):
         comicUrl = 'http:' + commicElem[0].get('src')
 
         # Download the image.
-        print(f'Downloading page {comicUrl}...')
+        print(f'Downloading image {comicUrl}...')
         res = requests.get(comicUrl)
         res.raise_for_status()
 
