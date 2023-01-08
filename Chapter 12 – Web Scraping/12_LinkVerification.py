@@ -15,7 +15,10 @@ res = requests.get(url)
 if res.status_code == requests.codes.ok:
     print('ok')
 
-
 # TODO: download every linked page on the page
+soup = bs4.BeautifulSoup(res.text, 'html.parser')
+aElems = soup.select('a')
+for aElem in aElems:
+    print(aElem.get('href'))
 # TODO: flag any pages that have a 404 status
 # TODO: print them out as broken links.
