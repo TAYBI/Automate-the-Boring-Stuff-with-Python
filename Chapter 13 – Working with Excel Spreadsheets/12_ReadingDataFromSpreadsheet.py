@@ -2,12 +2,12 @@ import openpyxl
 import pprint
 
 print('Openning workbook....')
-wb = openpyxl.load_workbook('censuspopdata.xlsx')
+wb = openpyxl.load_workbook('produceSales.xlsx')
 
 sheet = wb['Population by cencus Tract']
 countyData = {}
 
-# TODO: Fill in countyData with each county's population and tracts.
+# Fill in countyData with each county's population and tracts.
 print('Reading Rowas...')
 
 for row in range(2, sheet.max_row + 1):
@@ -23,4 +23,9 @@ for row in range(2, sheet.max_row + 1):
     countyData[state][country]['tracks'] += 1
     # Increase the county pop by the pop in this census tract.
     countyData[state][pop]['pop'] += int(pop)
- # TODO: Open a new text file and write the contents of countyData to it.
+# Open a new text file and write the contents of countyData to it.
+print('Writing results...')
+resultFile = open('census2010.py', 'w')
+resultFile.write('allData = ' + pprint.pformat(countyData))
+resultFile.close()
+print('Done.')
