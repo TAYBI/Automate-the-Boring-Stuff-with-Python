@@ -29,7 +29,9 @@ for i in range(1, len(rows)):
         key = f'{get_column_letter(i)}{j+1}'
         UPDATEDDATA[f'{get_column_letter(i)}{j+1}'] = sheet[value].value
 
-# for key, value in DATA.items():
-#     print(key, ':', value)
+wb = openpyxl.Workbook()
+sheet = wb['Sheet']
 for key, value in UPDATEDDATA.items():
-    print(key, ':', value)
+    sheet[key].value = value
+
+wb.save('updatedSpreadsheet.xlsx')
