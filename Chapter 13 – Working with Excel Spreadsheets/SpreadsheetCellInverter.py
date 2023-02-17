@@ -21,5 +21,15 @@ for column in columns:
         value = sheet[f'{column}{row}'].value
         DATA[key] = value
 
-for key, value in DATA.items():
+UPDATEDDATA = {}
+
+for i in range(1, len(rows)):
+    for j in range(0, len(columns)):
+        value = f'{columns[j]}{rows[i-1]}'
+        key = f'{get_column_letter(i)}{j+1}'
+        UPDATEDDATA[f'{get_column_letter(i)}{j+1}'] = sheet[value].value
+
+# for key, value in DATA.items():
+#     print(key, ':', value)
+for key, value in UPDATEDDATA.items():
     print(key, ':', value)
