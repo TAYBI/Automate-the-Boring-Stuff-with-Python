@@ -13,7 +13,7 @@ import os
 #  X  Call Python’s sort() list method to alphabetize the filenames.
 #  X  Create a PdfFileWriter object for the output PDF.
 #  x  Loop over each PDF file, creating a PdfFileReader object for it.
-#     Loop over each page (except the first) in each PDF file.
+#  x  Loop over each page (except the first) in each PDF file.
 #     Add the pages to the output PDF.
 #     Write the output PDF to a file named allminutes.pdf.
 
@@ -33,6 +33,10 @@ pdfWriter = PyPDF2.PdfWriter()
 for filename in pdfFiles:
     pdfFileObj = open(filename, 'rb')
     pdfReader = PyPDF2.PdfReader(pdfFileObj)
-    # TODO: Loop through all the pages (except the first) and add them.
+
+    # Loop through all the pages (except the first) and add them.
+    for pageNum in range(1, len(pdfReader.pages)):
+        pageObj = pdfReader.pages[pageNum]
+        pdfWriter.add_page(pageObj)
 
 # TODO: Save the resulting PDF to a file.
