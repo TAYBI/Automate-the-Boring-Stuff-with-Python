@@ -12,7 +12,7 @@ import os
 #  X  Call os.listdir() to find all the files in the working directory and remove any non-PDF files.
 #  X  Call Python’s sort() list method to alphabetize the filenames.
 #  X  Create a PdfFileWriter object for the output PDF.
-#     Loop over each PDF file, creating a PdfFileReader object for it.
+#  x  Loop over each PDF file, creating a PdfFileReader object for it.
 #     Loop over each page (except the first) in each PDF file.
 #     Add the pages to the output PDF.
 #     Write the output PDF to a file named allminutes.pdf.
