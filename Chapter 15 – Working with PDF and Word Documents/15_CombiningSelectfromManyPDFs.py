@@ -5,7 +5,7 @@ import os
 
 #  X  Find all PDF files in the current working directory.
 #  X  Sort the filenames so the PDFs are added in order.
-#     Write each page, excluding the first page, of each PDF to the output file.
+#  x  Write each page, excluding the first page, of each PDF to the output file.
 
 # In terms of implementation, your code will need to do the following:
 
@@ -14,8 +14,8 @@ import os
 #  X  Create a PdfFileWriter object for the output PDF.
 #  x  Loop over each PDF file, creating a PdfFileReader object for it.
 #  x  Loop over each page (except the first) in each PDF file.
-#     Add the pages to the output PDF.
-#     Write the output PDF to a file named allminutes.pdf.
+#  x  Add the pages to the output PDF.
+#  x  Write the output PDF to a file named allminutes.pdf.
 
 # Find All PDF Files
 pdfFiles = []
@@ -39,4 +39,7 @@ for filename in pdfFiles:
         pageObj = pdfReader.pages[pageNum]
         pdfWriter.add_page(pageObj)
 
-# TODO: Save the resulting PDF to a file.
+# Save the resulting PDF to a file.
+pdfOutput = open('allminutes.pdf', 'wb')
+pdfWriter.write(pdfOutput)
+pdfOutput.close()
